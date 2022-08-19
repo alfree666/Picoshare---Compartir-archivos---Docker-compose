@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+
+  picoshare:
+    image: mtlynch/picoshare 
+    container_name: picoshare       
+    environment:
+      - PORT=3001
+      - PS_SHARED_SECRET=p4ssw0rd
+    ports:
+      - "8200:3001"
+    command: -db /data/store.db
+    volumes:
+      - ./picos_data:/data
+
+      
